@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+
+<script src="../js/jquery.js"></script>
+<title>localstorage</title>
+</head>
+<body>
+<header>
+<h1>my simple to-do list</h1>
+</header>
+<section>
+<ul id='edit' contenteditable='true'>
+<li></li>
+</ul>
+
+<script>
+$(function(){
+var edit= document.getElementById('edit');
+$(edit).blur(function(){
+localStorage.setItem('todoData', this.innerHTML);
+});
+//when page loads
+if(localStorage.getItem('todoData')){
+edit.innerHTML=localStorage.getItem('todoData');
+}
+});
+    
+     
+</script>
+</body>
+</html>
